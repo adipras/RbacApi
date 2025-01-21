@@ -1,6 +1,14 @@
-public class Permission
+namespace RbacApi.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public virtual ICollection<RolePermission> RolePermissions { get; set; }
+    public class Permission
+    {
+        public Permission()
+        {
+            RolePermissions = new List<RolePermission>();
+        }
+
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public virtual ICollection<RolePermission> RolePermissions { get; set; }
+    }
 }

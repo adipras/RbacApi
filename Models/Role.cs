@@ -1,7 +1,16 @@
-public class Role
+namespace RbacApi.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public virtual ICollection<UserRole> UserRoles { get; set; }
-    public virtual ICollection<RolePermission> RolePermissions { get; set; }
+    public class Role
+    {
+        public Role()
+        {
+            UserRoles = new List<UserRole>();
+            RolePermissions = new List<RolePermission>();
+        }
+
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<RolePermission> RolePermissions { get; set; }
+    }
 }

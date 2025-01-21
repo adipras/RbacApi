@@ -1,7 +1,11 @@
-public class UserRole
+// Models/UserRole.cs
+namespace RbacApi.Models
 {
-    public int UserId { get; set; }
-    public int RoleId { get; set; }
-    public virtual User User { get; set; }
-    public virtual Role Role { get; set; }
+    public class UserRole
+    {
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
+        public required virtual User User { get; set; } = null!;
+        public required virtual Role Role { get; set; } = null!;
+    }
 }
